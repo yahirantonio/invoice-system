@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { firstValueFrom } from 'rxjs';
 import { AxiosResponse } from 'axios';
 import { CfdiUsage } from './dto/cfdiUsages.dto';
-import { GeneralResponse } from './dto/GeneralResponse.dto';
+import { GeneralResponse } from 'src/common/entities/GeneralResponse.entity';
 
 @Injectable()
 export class CatalogsService {
@@ -11,7 +11,7 @@ export class CatalogsService {
 
   async GeneralService<T>(url: string): Promise<T[]> {
     try {
-      const res: AxiosResponse<GeneralResponse<T>> = await firstValueFrom(this.httpService.get(url))
+      const res: AxiosResponse<GeneralResponse<T[]>> = await firstValueFrom(this.httpService.get(url))
       return res.data.data;
     } catch (error) {
       throw error

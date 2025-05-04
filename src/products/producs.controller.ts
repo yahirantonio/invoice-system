@@ -5,7 +5,7 @@ import { UpdateProducDto } from './dto/update-produc.dto';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { PaginatedProductEntity } from './entities/paginatedProdcut.entity';
 import { Product } from './entities/product.entity';
-import { GeneralMessage } from 'src/common/entities/GeneralMessage.entity';
+import { GeneralMessage } from 'src/common/dto/GeneralMessage.entity';
 import { ProducDtoUID } from './entities/ProducDtoUID.entity';
 
 @ApiTags('products')

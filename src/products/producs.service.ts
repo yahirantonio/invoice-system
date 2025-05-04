@@ -5,9 +5,9 @@ import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import { firstValueFrom } from 'rxjs';
 import { PaginatedProductEntity } from './entities/paginatedProdcut.entity';
-import { GeneralResponse } from 'src/common/entities/GeneralResponse.entity';
+import { GeneralResponse } from 'src/common/dto/GeneralResponse.entity';
 import { Product } from './entities/product.entity';
-import { GeneralMessage } from 'src/common/entities/GeneralMessage.entity';
+import { GeneralMessage } from 'src/common/dto/GeneralMessage.entity';
 import { ProducDtoUID } from './entities/ProducDtoUID.entity';
 
 @Injectable()

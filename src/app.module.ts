@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { CatalogsModule } from './catalogs/catalogs.module';
 import { ConfigModule } from '@nestjs/config';
 import { HttpCustomModule } from './common/http-custom.module';
-import { ProducsModule } from './producs/producs.module';
+import { ProducsModule } from './products/producs.module';
 import { HttpDataService } from './common/http-data.service';
+import { ClientsModule } from './clients/clients.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { HttpDataService } from './common/http-data.service';
     }),
     HttpCustomModule,
     CatalogsModule,
-    ProducsModule
+    ProducsModule,
+    ClientsModule
   ],
   providers:[HttpDataService],
   exports: [HttpDataService]

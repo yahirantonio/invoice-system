@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { firstValueFrom } from 'rxjs';
 import { AxiosResponse } from 'axios';
 import { CfdiUsage } from './dto/cfdiUsages.dto';
-import { GeneralResponse } from 'src/common/entities/GeneralResponse.entity';
+import { GeneralResponse } from 'src/common/dto/GeneralResponse.entity';
 
 @Injectable()
 export class CatalogsService {

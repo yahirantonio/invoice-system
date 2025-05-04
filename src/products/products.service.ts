@@ -1,32 +1,32 @@
 import { Injectable } from '@nestjs/common';
-import { CreateProducDto } from './dto/create-produc.dto';
-import { UpdateProducDto } from './dto/update-produc.dto';
+import { CreateProductDto } from './dto/create-product.dto';
+import { UpdateProductDto } from './dto/update-product.dto';
 import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import { firstValueFrom } from 'rxjs';
-import { PaginatedProductEntity } from './entities/paginatedProdcut.entity';
 import { GeneralResponse } from 'src/common/dto/GeneralResponse.entity';
-import { Product } from './entities/product.entity';
 import { GeneralMessage } from 'src/common/dto/GeneralMessage.entity';
-import { ProducDtoUID } from './entities/ProducDtoUID.entity';
+import { ProductDtoUID } from './dto/ProducDtoUID.entity';
+import { PaginatedProduct } from './dto/paginatedProduct.dto';
+import { Product } from './dto/product.dto';
 
 @Injectable()
-export class ProducsService {
+export class ProductsService {
 
   constructor(private readonly httpService: HttpService) { }
 
-  async create(createProducDto: CreateProducDto) {
+  async create(createProducDto: CreateProductDto) {
     try {
-      const res: AxiosResponse<GeneralResponse<ProducDtoUID>> = await firstValueFrom(this.httpService.post('/v3/products/create/', createProducDto));
+      const res: AxiosResponse<GeneralResponse<ProductDtoUID>> = await firstValueFrom(this.httpService.post('/v3/products/create/', createProducDto));
       return res.data.data
     } catch (error) {
       throw error;
     }
   }
 
-  async findAll(): Promise<PaginatedProductEntity> {
+  async findAll(): Promise<PaginatedProduct> {
     try {
-      const res: AxiosResponse<PaginatedProductEntity> = await firstValueFrom(this.httpService.get('/v3/products/list'));
+      const res: AxiosResponse<PaginatedProduct> = await firstValueFrom(this.httpService.get('/v3/products/list'));
       return res.data
     } catch (error) {
       throw error;
@@ -43,9 +43,9 @@ export class ProducsService {
     }
   }
 
-  async update(id: string, updateProducDto: UpdateProducDto) {
+  async update(id: string, updateProductDto: UpdateProductDto) {
     try {
-      const res: AxiosResponse<GeneralResponse<ProducDtoUID>> = await firstValueFrom(this.httpService.post('/v3/products/update/' + id, updateProducDto));
+      const res: AxiosResponse<GeneralResponse<ProductDtoUID>> = await firstValueFrom(this.httpService.post('/v3/products/update/' + id, updateProductDto));
       return res.data.data
     } catch (error) {
       throw error;

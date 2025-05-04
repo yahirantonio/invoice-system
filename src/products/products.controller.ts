@@ -1,30 +1,30 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { ProducsService } from './producs.service';
-import { CreateProducDto } from './dto/create-produc.dto';
-import { UpdateProducDto } from './dto/update-produc.dto';
+import { ProductsService } from './products.service';
+import { CreateProductDto } from './dto/create-product.dto';
+import { UpdateProductDto } from './dto/update-product.dto';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { PaginatedProductEntity } from './entities/paginatedProdcut.entity';
-import { Product } from './entities/product.entity';
 import { GeneralMessage } from 'src/common/dto/GeneralMessage.entity';
-import { ProducDtoUID } from './entities/ProducDtoUID.entity';
+import { ProductDtoUID } from './dto/ProducDtoUID.entity';
+import { Product } from './dto/product.dto';
+import { PaginatedProduct } from './dto/paginatedProduct.dto';
 
 @ApiTags('products')
 @Controller('products')
-export class ProducsController {
-  constructor(private readonly producsService: ProducsService) { }
+export class ProductsController {
+  constructor(private readonly productsService: ProductsService) { }
 
   @Post()
   @ApiOperation({ summary: 'Create Product', description: 'successful operation' })
-  @ApiResponse({ status: 200, description: 'Product Created', type: ProducDtoUID })
-  async create(@Body() createProducDto: CreateProducDto): Promise<ProducDtoUID> {
-    return await this.producsService.create(createProducDto);
+  @ApiResponse({ status: 200, description: 'Product Created', type: ProductDtoUID })
+  async create(@Body() createProducDto: CreateProductDto): Promise<ProductDtoUID> {
+    return await this.productsService.create(createProducDto);
   }
 
   @Get()
   @ApiOperation({ summary: 'get all Products', description: 'successful operation' })
-  @ApiResponse({ status: 200, description: 'Products list', type: PaginatedProductEntity })
-  async findAll(): Promise<PaginatedProductEntity> {
-    return await this.producsService.findAll();
+  @ApiResponse({ status: 200, description: 'Products list', type: PaginatedProduct })
+  async findAll(): Promise<PaginatedProduct> {
+    return await this.productsService.findAll();
   }
 
   @Get(':id')
@@ -32,15 +32,15 @@ export class ProducsController {
   @ApiParam({ name: 'id', example: '6543f3bf0016d' })
   @ApiResponse({ status: 200, description: 'Product', type: Product })
   findOne(@Param('id') id: string): Promise<Product> {
-    return this.producsService.findOne(id);
+    return this.productsService.findOne(id);
   }
 
   @Patch(':id')
   @ApiOperation({ summary: 'Update Product', description: 'successful operation' })
   @ApiParam({ name: 'id', example: '6543f3bf0016d' })
-  @ApiResponse({ status: 200, description: 'Product Updated', type: ProducDtoUID })
-  update(@Param('id') id: string, @Body() updateProducDto: UpdateProducDto) {
-    return this.producsService.update(id, updateProducDto);
+  @ApiResponse({ status: 200, description: 'Product Updated', type: ProductDtoUID })
+  update(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
+    return this.productsService.update(id, updateProductDto);
   }
 
   @Delete(':id')
@@ -48,6 +48,6 @@ export class ProducsController {
   @ApiParam({ name: 'id', example: '6543f3bf0016d' })
   @ApiResponse({ status: 200, description: 'Product Deleted', type: GeneralMessage })
   async remove(@Param('id') id: string) {
-    return await this.producsService.remove(id);
+    return await this.productsService.remove(id);
   }
 }

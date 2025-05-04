@@ -10,8 +10,3 @@ export class Country {
     @ApiProperty({ description: 'Agrupación del país', example: 'Europa' })
     agrupacion: string;
 }
-
-export class CountryResponse {
-    response: string;
-    data: Country[];
-}

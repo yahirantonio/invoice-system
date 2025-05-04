@@ -10,8 +10,3 @@ export class productServiceKey {
   @ApiProperty({ example: '', description: 'Complemento adicional del producto (si aplica)' })
   complement: string;
 }
-
-export class productServiceKeyResponse {
-  response: string;
-  data: productServiceKey[];
-}

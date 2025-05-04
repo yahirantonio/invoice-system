@@ -8,8 +8,3 @@ export class TaxRegime {
     name: string;
 }
 
-export class TaxRegimeResponse {
-    response: string;
-    data: TaxRegime[];
-}
-

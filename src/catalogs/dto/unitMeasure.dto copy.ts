@@ -7,8 +7,3 @@ export class unitMeasure {
     @ApiProperty({ description: 'Nombre de la unidad de ángulo', example: 'Radián' })
     name: string;
 }
-
-export class unitMeasureResponse {
-    response: string;
-    data: unitMeasure[];
-}

@@ -5,6 +5,7 @@ import { HttpCustomModule } from './common/http-custom.module';
 import { ProductsModule } from './products/products.module';
 import { HttpDataService } from './common/http-data.service';
 import { ClientsModule } from './clients/clients.module';
+import { InvoicesModule } from './invoices/invoices.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { ClientsModule } from './clients/clients.module';
     HttpCustomModule,
     CatalogsModule,
     ProductsModule,
-    ClientsModule
+    ClientsModule,
+    InvoicesModule
   ],
   providers:[HttpDataService],
   exports: [HttpDataService]

@@ -1,12 +1,12 @@
 # Sistema de Facturación en Línea
 
-API para generar facturas electrónicas utilizando [Facturama](https://www.facturama.mx/) como proveedor de timbrado. Construido con [NestJS](https://nestjs.com/) y documentado con Swagger.
+API para generar facturas electrónicas utilizando [Factura.com](https://factura.com/) como proveedor de timbrado. Construido con [NestJS](https://nestjs.com/) y documentado con Swagger.
 
 ---
 
 ## 🚀 Características
 
-- Generación de facturas 4.0 vía Facturama
+- Generación de facturas 4.0 vía Factura.com
 - Documentación automática con Swagger
 - Arquitectura modular con NestJS
 - Listo para producción o uso personal
@@ -24,7 +24,7 @@ Explora la documentación interactiva en:
 
 - NestJS
 - Swagger
-- Facturama REST API
+- Factura.com REST API
 - TypeScript
 
 ---
@@ -49,8 +49,8 @@ Explora la documentación interactiva en:
 <summary>.env</summary>
 
 ```env
-FACTURAMFApiKey_USER=tu_usuario_facturama
-FSecretKey=tu_contraseña_facturama
+FACTURAMFApiKey_USER=tu_usuario_Factura.com
+FSecretKey=tu_contraseña_Factura.com
 Factura_Url=https://sandbox.factura.com/api
 PORT=3000
 ```
@@ -60,8 +60,8 @@ PORT=3000
 <summary>.env.production</summary>
 
 ```env.production
-FACTURAMFApiKey_USER=tu_usuario_facturama
-FSecretKey=tu_contraseña_facturama
+FACTURAMFApiKey_USER=tu_usuario_Factura.com
+FSecretKey=tu_contraseña_Factura.com
 Factura_Url=https://api.factura.com
 PORT=3000
 ```

@@ -6,7 +6,7 @@ API para generar facturas electrónicas utilizando [Facturama](https://www.factu
 
 ## 🚀 Características
 
-- Generación de facturas CFDI 3.3 / 4.0 vía Facturama
+- Generación de facturas 4.0 vía Facturama
 - Documentación automática con Swagger
 - Arquitectura modular con NestJS
 - Listo para producción o uso personal
@@ -44,8 +44,9 @@ Explora la documentación interactiva en:
 
 3. Crea dos archivos `.env` y `.env.production` con las siguientes variables:
 
+
 <details>
-<summary>.env.example</summary>
+<summary>.env</summary>
 
 ```env
 FACTURAMFApiKey_USER=tu_usuario_facturama
@@ -53,6 +54,10 @@ FSecretKey=tu_contraseña_facturama
 Factura_Url=https://sandbox.factura.com/api
 PORT=3000
 ```
+</details>
+
+<details>
+<summary>.env.production</summary>
 
 ```env.production
 FACTURAMFApiKey_USER=tu_usuario_facturama
@@ -112,5 +117,5 @@ SOFTWARE.
 
 ## 📬 Contacto
 
-Autor: Yahir Antonio Diaz Coronado 
+Autor: Yahir Diaz 
 Email: yahirantoni90@gmail.com

@@ -34,7 +34,7 @@ Explora la documentación interactiva en:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/yahirantonio/invoice-system.git
-   cd sistema-facturacion
+   cd invoice-system
    ```
 
 2. Instala dependencias:
